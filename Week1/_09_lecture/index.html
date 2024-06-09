@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<p onClick = "changeText(this)"> Welcome to my world!</p>
+	<p> Hello</p>
+	<button onClick ="displayDate()"> The time is :</button>
+	<p id ="demo"></p>
+	<form>
+		<input type="text" id ="firstName" onchange="upperCase()"/>
+	</form>
+	<div onmouseover ="mover(this)" onmouseout ="out(this)" style ="background-color: aqua; height: 20px; padding:40px">
+		Mouse Over Me
+	</div>
+	<script>
+ function changeText(id){
+	id.innerHTML=`Here you go!`;
+ }
+	function displayDate(){
+		document.getElementById("demo").innerHTML =new Date();
+	}
+	function upperCase(){
+		const x = document.getElementById("firstName");
+		x.value = x.value.toUpperCase();
+	}
+	function mover(obj){
+		obj.innerHTML = "Thank You"
+	}
+	function out(obj){
+		obj.innerHTML = "Bye"
+	}
+	</script>
+</body>
+</html>
