@@ -1,0 +1,25 @@
+h1{
+	text-align: center;
+}
+#class{
+	background-color: aqua;
+}
+div p{
+	background-color: yellow;
+}
+div > p{    /*direct child*/
+	background-color: beige;
+}
+div + p{  /*adjacent sibling*/
+background-color: blue;
+}
+div ~ p:hover{  /* general sibling selector  , now adjacent sibling also turns to this color ,:hover pseudo class selector*/
+	background-color: chartreuse;
+}
+div ~p::first-letter{ /*pseudo first letter*/
+	color:brown;
+}
+
+a[target] {
+	background-color: blueviolet;
+}
