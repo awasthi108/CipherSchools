@@ -1,0 +1,67 @@
+Overview 
+
+MERN srtack is a Javascript Stack that is used for easier and faster deployment of full stack web applications. MERN Stack comprises of four technologies namely MongoDB, Express, React and Node.js.
+It is designed to make the process smoother and easier.
+
+Each of these four powerful technologies provide an end to end framework for the developers to work and each of these technologies, play a big part in the development of web applications.
+
+1. MongoDB - Cross-platform Document Oriented Database
+
+MongoDB is a NoSQL database where each record is a document comprising of key-value pairs that are similar to JSON(JavaScript Object Notation) objects.
+MoboDB is flexible and allows its users to  create schema, databases, tables, etc.
+Documents that are identifiable by a primary key make up the basic unit of MongoDB. Once MongoDB is installed, users can make use of Mongo shell as well. 
+Mongoshell provides a JavaScript interface through which the users can interact and carry out operations(eg: querying, updating records, deleting records).
+
+Why use MongoDB ?
+1. Fast - Being a document oriwnted database, easy to index documents. Therefore a faster response.
+2. Scalability - Large data can be handled by dividing it into several machines.
+3. Use of JavaScript - MongoDB uses JavaScript which is the biggest advantage.
+4. Schema Less - Any type of data in a seperate document.
+5. Simple Enviornment Setup - It is really simple to set up MongoDB.
+6. Flexible Document Model - MongoDB supports document-model(tables,schemas,columns & SQL) which is faster and easier.
+7. Data is stored in the form of BSON(similar to JSON):
+  a. Objects, Object Memebers, Arrays, Values and Strings.
+  b. JSON syntax is very easy to use.
+  c. JOSN has a wide range of browser compatibility.
+  d. Sharing Data: Data of any size and type( video,audio) can be shared easily.
+
+2. Express - Backend Framework
+
+Express is a Node.js framework. Rather than writing the code using Node.js and creating loads of Node modules, Express makes it simpler and easier to write the back-end code.
+Express helps in designing great web applications and APIs.
+Express supports many middlewares which makes the code shorter and easier to write.
+
+Why use Express ? 
+1. Asynchronous and Single-threaded.
+2. Efficient, fast and scalable.
+3. Has the biggest community for Node.js.
+4. Express promotes code reusability with its bulit-in router.
+5. Robust API.
+
+3. React - Frontend Framework
+
+React is a JavaScript library that is used for building user interfaces. React is used for the development of single-psge spplications because of its ability to handle the changing data.
+React allows users to code in JavaScript and create UI components.
+
+Why use React ?
+
+1. Virtual DOM - A virtual DOM object is a representation of a DOM object. Virtual DOM is actually a copy of the original DOM. Then the difference between the original DOM and this virtual DOM is compared
+and the change are made accordingly that the original DOM.
+2. JSX - Stands for JavaScript XML. It is an HTML/XML JavaScript Extension which is used in React. Makes it easier and simpler to write React components.
+3. Components - ReactJS supports Compoents. Components are the building blocks of UI wherein each components has logic and contributes to the overall UI. These components also promotes resuability and make the 
+overall web application easier to understand.
+3. High Preferance - Features like Virtual DOM, JSX and Components make it much faster than the rest of the frameworks out there.
+4.  Developing Android/iOS Apps - Which React Native, you can easily code android-based or iOS-based apps, with just the knowledge of JavaScript and React.
+
+4. Node.js - JavaScript Runtime Enviornment
+
+Node.js provides a JavaScript runtime enviornment which allows the user to run their code on the server(outside the browser). Node package manager i.e npm allows 
+the user to choose from thousands of free packages (node modules) to download. 
+
+Why use Node.js ?
+
+1. Open-source JavaScript Runtime Enviornment.
+2. Single Threading - Follows a single-threaded model.
+3. Data Streaming.
+4. Fast - Build on Google Chrome's JavaScript engine, Node.js has a fast code execution.
+5. Highly scalable.
