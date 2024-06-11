@@ -1,0 +1,5 @@
+MongoDB + Express + React + Node
+
+Client <-> FE Server <-> BE Server <-> Database
+            React        Node+         MongodB
+                         Express
