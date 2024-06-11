@@ -1,4 +1,4 @@
-# CIPHER SCHOOLS Web Development with MERN STACK Answers Repository
+# Full-Stack Development Using MERN Stack by Cipher School Answers Repository
 
 Welcome to the CIPHER SCHOOLS Web Development with MERN STACK Assignments Repository!
 
