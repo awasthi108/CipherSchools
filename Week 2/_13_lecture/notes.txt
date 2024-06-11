@@ -1,0 +1,10 @@
+Firstly we have installed nodejs
+
+
+
+npm install -g npm
+npm -g i create-react-app
+
+steps to create react app
+1)create-react-app my-app
+if we have not installed (npm -g i create-react-app) --> npx create-react-app my-app 
