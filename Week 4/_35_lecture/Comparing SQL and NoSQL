@@ -1,0 +1,16 @@
+Ideas
+SQL databases are primarily called Relational Databases (RDBMS); whereas NoSQL databases are prilmarily called non-relational or distributed databases.
+
+Sql databases define and manipulate data-based structured query language(SQL). Seeing from a side this language is extremely powerful.
+SQL is one of the most versatile and widely used options available which makes it a safe choice, especially for great complex queries.
+But from another side, it can be restrictive. SQL requires you to use predefined schemas to determine the structure of your data before you work with it.
+Also, all of your data must follow the same structure. This can require significant up-front preparation which means that a change in the structure would be both difficult and disruptive to your whole system.
+A NoSQL database has a dynamic schema for unstructured data. Data is stored in many ways which means it can be document-oriented, column-oriented, graph-based or organized as a key-value store.
+This flexibility means that documents can be created without having a defined structure first. Also, each document can have its own unique structure. The syntax varies from database to database, and you can add
+fieldsas you go.
+In almost all situstions SQL databases are vertically scalable. This means that you can increase the load on a single server by increasing things like RAM, CPU or SSD. But on the other hand, NoSQL databases are 
+horizontally scalable. This means that you can handle more traffic by sharding, or adding more srevers in your NoSQL database. It is similar to adding more floors to the same building versus adding more buildings
+to the neighborhood. Thus NoSQL can ultimately become larger and more powerful, making these databases preferred choice large or ever-changing data sets.
+SQL databases are table-based on the other hand NoSQL databases are either key-value pairs, document-based, graph databaes, or wide-column stores. This makes relational SQL databases abetter option for applications 
+that require multi-row transactions such as an accounting system or for legacy systems that were built for relational structure.
+SQL databases follow ACID properties (Atomicity, Consistency, Isolation and Durability) whereas the NoSQL follows the Brewers CAP tbeorem (Consistency, Availability, and Partition tolerance).
