@@ -1,0 +1,43 @@
+const deleteUser = async(req,res)=>{
+  const {user} = req;
+  const userId = user._id;
+  const {id: userId} = req.params;
+  const deleteResult = await User.deleteOne({_id:userId);
+  if(!deleteResult.deletedCount){
+    console.error(" Delete Failed! User with ID: ${userId} wasnot found ");
+    return res.status(404).send({message: "Delete Failed! User with ID: ${userId} wasnot found"})
+  })
+  console.info("Delete Success: User with ID: ${userId} was deleted")
+  return res.status(200).send({message: "Delete Success!"});
+};
+
+module.exports = {addNewUser, loginUser, deleteUser};
+
+const {verifyToken} = require("../jwt");
+const authMiddleware = async(req,res,next)=>{
+ //{authorization:"Bearer <token>"} 
+  const {authorization} = req.headers;
+  if(!authorization){
+    return res.status(400).send({message: "Please send a token"});
+  }
+  const token = authorization.substring(7);
+  const {isValidToken, payload} = verifyToken(token);
+  if (isValidToken){
+    console.log("Token is Valid");
+    const user = await User.findOne({_id: payload._id});
+    req.token = token;
+    req.user = user;
+    next();
+  }else{
+    console.warn("Token is invalid");
+    return res.status(403).send({message: "Please use a valid token!"})
+  }
+};
+
+module.exports = authMiddleware;
+
+UserSchema.methods.generateToken = async function(){
+  const user = this;
+  const token = generateToken({_id:user._id});
+  return token;
+}

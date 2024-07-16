@@ -1,0 +1,8 @@
+AddTask onSubmit={addNewTask} validator={(title,description)=>{
+  if(title?.length && !title.includes("\n") && description?.length){
+    console.log("Is Valid");
+    return true;
+}
+  console.log("Invalid");
+  return false;
+}}
