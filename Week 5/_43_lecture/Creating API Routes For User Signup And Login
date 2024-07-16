@@ -1,0 +1,76 @@
+const {model, Schema} = require("mongoose");
+const {isEmail} = require("validator");
+const UserSchema = new Schema({
+  name: {type: String,trim:true, required:true},
+  email: {type: String,trim:true, lowercase:true, unique:true, required:true, validate:{validator(email){
+      return isEmail(email);
+  },},},
+  age:  {type:number, required:true, validate:{validator(age){
+    if(age<0){
+      throw new Error("Age must be positive");
+            }
+    return true;
+  },},},
+  password:{type:String, required: true, trim:true, minlength:8, validate:{validator(password){
+      if(password.includes(" ") || password.includes("\n") || password.includes("\t")){
+          throw new Error("PAssword includes space/tab/newline characters");
+      }
+      if(password.toLowerCase().includes("password")){
+        throw new Error("Password must not contain "password" ");
+      }
+  },},},
+},{timestamp: true}
+);
+
+UserSchema.statics.findByEmailAndPasswordForAuth = async(email,password) =>{
+    try{
+      const user = await User.findOne({email});
+      if(!user){
+        throw new Error("Invalid Credentials");
+      }
+      if(password!==user.password){
+         throw new Error("Invalid Credentials");
+      }
+      console.log("Login Successful");
+      return user;
+    }catch(err){
+      console.error(err);
+      throw err;
+    }
+}
+const User = model("User", UserSchema);
+module.exports = User;
+
+const User = require("../modes/User");
+const addNewUser = async(req,res)=>{
+  try{
+    const {name,email,age,password} = req.body;
+    const user = new User({name,email,age,password});
+    await user.save();
+    return res.status(201).send(user);
+  }catch(err){
+    console.error(err);
+    return res.status(500).send({message:err.message});
+}
+
+const LoginUser = async(req,res)=>{
+  try{
+    const {email, password} = req.body;
+    const user = await User.findByEmailAndPasswordForAuth(email, password);
+    console.info("User With Email:${email}succesfully logged in.")
+    return res.status(200).send(user);  
+  }catch(err){
+    console.error(err);
+    return res.status(500).send({message:"Login Failed!"});
+  }
+}
+
+module.exports = {addNewUser, loginUser};
+
+const express = require("express");
+const router = express.Router();
+const userController = require("../controllers/user-controller");
+router.post("/login",userController.loginUser);
+router.post("/signup",userController.addNewUser);
+
+module.exports = router; 
